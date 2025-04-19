@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memory Allocation Simulator", "Memory Allocation Simulator.csproj", "{1F6F1BFE-283F-4D5E-A3EF-4F4E1932C30C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F6F1BFE-283F-4D5E-A3EF-4F4E1932C30C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6F1BFE-283F-4D5E-A3EF-4F4E1932C30C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6F1BFE-283F-4D5E-A3EF-4F4E1932C30C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6F1BFE-283F-4D5E-A3EF-4F4E1932C30C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA5D47F8-4F71-46F5-8574-47803A01EB03}
+	EndGlobalSection
+EndGlobal
