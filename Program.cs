@@ -201,63 +201,84 @@ class MemoryAllocator
         string command;
         string name;
         int reqSize;
+        bool exitFlag = false;
 
-        Console.Write("Enter memory size: ");
-        size = int.Parse(Console.ReadLine());
-        InitializeMemory(size);
-
-        // Choose allocation strategy
-        Console.WriteLine("Choose the memory allocation strategy:");
-        Console.WriteLine("1. First Fit");
-        Console.WriteLine("2. Best Fit");
-        Console.WriteLine("3. Worst Fit");
-
-        int choice = int.Parse(Console.ReadLine());
-        while (true)
+        do
         {
-            Console.WriteLine("\nallocator> ");
-            command = Console.ReadLine();
+            // Prompt to restart the process or exit
+            Console.Write("Enter memory size: ");
+            size = int.Parse(Console.ReadLine());
+            InitializeMemory(size);
 
-            if (command.StartsWith("RQ"))
+            // Choose allocation strategy
+            Console.WriteLine("Choose the memory allocation strategy:");
+            Console.WriteLine("1. First Fit");
+            Console.WriteLine("2. Best Fit");
+            Console.WriteLine("3. Worst Fit");
+
+            int choice = int.Parse(Console.ReadLine());
+
+            while (true)
             {
-                var parts = command.Split(' ');
-                name = parts[1];
-                reqSize = int.Parse(parts[2]);
+                Console.WriteLine("\nallocator> ");
+                command = Console.ReadLine();
 
-                // Allocate based on user's chosen strategy
-                switch (choice)
+                if (command.StartsWith("RQ"))
                 {
-                    case 1:
-                        AllocateFirstFit(name, reqSize);
-                        break;
-                    case 2:
-                        AllocateBestFit(name, reqSize);
-                        break;
-                    case 3:
-                        AllocateWorstFit(name, reqSize);
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice!");
-                        break;
+                    var parts = command.Split(' ');
+                    name = parts[1];
+                    reqSize = int.Parse(parts[2]);
+
+                    // Allocate based on user's chosen strategy
+                    switch (choice)
+                    {
+                        case 1:
+                            AllocateFirstFit(name, reqSize);
+                            break;
+                        case 2:
+                            AllocateBestFit(name, reqSize);
+                            break;
+                        case 3:
+                            AllocateWorstFit(name, reqSize);
+                            break;
+                        default:
+                            Console.WriteLine("Invalid choice!");
+                            break;
+                    }
+                }
+                else if (command.StartsWith("RL"))
+                {
+                    name = command.Split(' ')[1];
+                    Release(name);
+                }
+                else if (command.StartsWith("STAT"))
+                {
+                    PrintMemory();
+                }
+                else if (command.StartsWith("X"))
+                {
+                    break;
+                }
+                else if (command.StartsWith("EXIT"))
+                {
+                    // Restart the process
+                    Console.WriteLine("Restarting the process...");
+                    break;
+                }
+                else if (command.StartsWith("QUIT"))
+                {
+                    // Exit the program
+                    exitFlag = true;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Unknown command.");
                 }
             }
-            else if (command.StartsWith("RL"))
-            {
-                name = command.Split(' ')[1];
-                Release(name);
-            }
-            else if (command.StartsWith("STAT"))
-            {
-                PrintMemory();
-            }
-            else if (command.StartsWith("X"))
-            {
-                break;
-            }
-            else
-            {
-                Console.WriteLine("Unknown command.");
-            }
-        }
+
+        } while (!exitFlag);  // Loop until the user chooses to quit
+
+        Console.WriteLine("Exiting program...");
     }
 }
