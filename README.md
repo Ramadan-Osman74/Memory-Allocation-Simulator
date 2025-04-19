@@ -30,6 +30,3 @@ This program simulates memory allocation using **First Fit**, **Best Fit**, and 
 3. Use the `RQ` command to allocate memory.
 4. Use the `RL` command to release memory.
 
-## License
-
-This project is licensed under the MIT License.
