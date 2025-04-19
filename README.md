@@ -1,37 +1,35 @@
-Memory Allocation Simulator
-Overview
-This program simulates memory allocation using First Fit, Best Fit, and Worst Fit strategies. It allows users to allocate and release memory for processes and visualize memory usage.
+# Memory Allocation Simulator
 
-Features
-First Fit: Allocates the first available block that fits.
+## Overview
+This program simulates memory allocation using **First Fit**, **Best Fit**, and **Worst Fit** strategies. It allows users to allocate and release memory for processes and visualize memory usage.
 
-Best Fit: Allocates the smallest available block that fits.
+## Features
 
-Worst Fit: Allocates the largest available block.
+- **First Fit**: Allocates the first available block that fits.
+- **Best Fit**: Allocates the smallest available block that fits.
+- **Worst Fit**: Allocates the largest available block.
 
-Commands
-RQ <name> <size>: Request memory allocation.
+## Commands
 
-RL <name>: Release allocated memory.
+- `RQ <name> <size>`: Request memory allocation.
+- `RL <name>`: Release allocated memory.
+- `STAT`: Display current memory allocation.
+- `EXIT`: Restart the process.
+- `QUIT`: Exit the program.
 
-STAT: Display current memory allocation.
+## Installation
 
-EXIT: Restart the process.
+1. Clone the repository or download the ZIP file.
+2. Open the project in **Visual Studio**.
+3. Build and run the project.
 
-QUIT: Exit the program.
+## Usage
 
-Installation
-Clone the repository or download the ZIP file.
+1. Enter the total memory size.
+2. Choose the allocation strategy.
+3. Use the `RQ` command to allocate memory.
+4. Use the `RL` command to release memory.
 
-Open the project in Visual Studio.
+## License
 
-Build and run the project.
-
-Usage
-Enter the total memory size.
-
-Choose the allocation strategy.
-
-Use the RQ command to allocate memory.
-
-Use the RL command to release memory.
+This project is licensed under the MIT License.
